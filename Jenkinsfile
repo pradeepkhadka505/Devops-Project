@@ -24,7 +24,7 @@ pipeline {
 	}
 	stage('push file into Docker hun'){
 	steps{
-	     sh 'echo "Docker push"'
+	     echo 'push docker file'
           }
 	}
     }
