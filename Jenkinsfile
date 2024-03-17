@@ -4,18 +4,29 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('Automation') {
             steps {
-                echo 'Hello World'
+                echo 'Project Automations '
             }
         }
-        stage('git-clone'){
+        stage('directory-view'){
             steps{
-                sh 'git clone https://github.com/pradeepkhadka505/Devops-Project.git'
+                
                 sh 'ls -ltr'
                 sh 'pwd'
             }
         }
+	stage('docker-build){
+	steps{
+	    sh 'cd Devops-Project/php && sudo docker build -t phptest .'
+	    sh 'sudo docker images'
+	  }
+	}
+	stage('push file into Docker hun'){
+	steps{
+	     sh 'echo "Docker push"'
+          }
+	}
     }
 }
 
