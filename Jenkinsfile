@@ -19,11 +19,18 @@ pipeline {
         }
 	
         stage('docker-build') {
-	     steps {
-	     sh 'cd Devops-Project/php/ && sudo docker build -t phptest .'
-	     sh 'sudo docker image ls'
+	   steps {
+	          sh 'cd Devops-Project/php && sudo docker build -t phptest .'
+	          sh 'sudo docker images'
 	     }
 	 }
+
+	stage('Push to docker hub') {
+		steps {
+		    echo 'code get pushes in to docker hub'
+		}
+        }
+
     }
 }
 
