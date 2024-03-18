@@ -14,12 +14,14 @@ pipeline {
                 
                 sh 'ls -ltr'
                 sh 'pwd'
+		sh 'ls -ltr Devops-Project/'
             }
         }
 	
         stage('docker-build') {
 	     steps {
-	     echo 'Docker build'
+	     sh 'cd Devops-Project/php && sudo docker build -t phptest .'
+	     sh 'sudo docker images'
 	     }
 	 }
     }
