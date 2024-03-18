@@ -27,7 +27,7 @@ pipeline {
 
 	stage('Push to docker hub') {
 	     steps {
-		    echo 'code get pushes in to docker hub'
+		  echo 'code get pushes in to docker hub'
             }
         }
 
