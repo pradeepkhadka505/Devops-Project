@@ -21,7 +21,7 @@ pipeline {
         stage('docker-build') {
 	     steps {
 	     sh 'cd Devops-Project/php && sudo docker build -t phptest .'
-	     sh 'sudo docker images'
+	     sh 'sudo docker image ls'
 	     }
 	 }
     }
