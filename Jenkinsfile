@@ -17,7 +17,11 @@ pipeline {
             }
         }
 	
-	
+        stage('docker-build) {
+	     steps {
+	     echo 'Docker build'
+	     }
+	 }
     }
 }
 
