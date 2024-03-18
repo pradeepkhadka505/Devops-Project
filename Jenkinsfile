@@ -24,6 +24,14 @@ pipeline {
 	          sh 'sudo docker images'
 	     }
 	 }
+        
+         stage ('push-image-at-d-hub'){
+             steps {
+                 sh 'sudo docker image tag phptest pradeepkhadka505/php-test:v1'
+                 sh 'sudo docker login -u="pradeepkhadka505" -p="Pradeep@khadka@505" && sudo docker phptest pradeepkhadka505/php-test:v1'
+                 sh 'echo "image push to docker hub" '
+                 }
+        }
 
 	stage('mysql-build') {
 	     steps {
@@ -34,14 +42,6 @@ pipeline {
 	    }
 
         }
-
-        stage ('push-image-at-d-hub'){
-	     steps {
-	         sh 'sudo docker image tag phptest pradeepkhadka505/php-test:v1'
-		 sh 'sudo docker login -u="pradeepkhadka505" -p="Pradeep@khadka@505" && sudo docker phptest pradeepkhadka505/php-test:v1'
-		 sh 'echo "image push to docker hub" '
-		 }
-	}
 
     }
 }
