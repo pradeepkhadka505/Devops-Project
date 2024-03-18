@@ -16,13 +16,8 @@ pipeline {
                 sh 'pwd'
             }
         }
-	stage('docker-build'){
-	steps{
-	    sh 'cd Devops-Project/php && sudo docker build -t phptst .'
-	    sh 'sudo docker image ls'
-	    
-	  }
-	}
+	
+	
     }
 }
 
