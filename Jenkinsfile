@@ -25,9 +25,11 @@ pipeline {
 	     }
 	 }
 
-	stage('Push to docker hub') {
+	stage('mysql-build') {
 	     steps {
-		  echo 'code get pushes in to docker hub'
+		  sh 'cd Devops-Project/mysql && sudo docker build -t mysqldb .'
+		  sh 'sudo docker image ls'
+
             }
         }
 
