@@ -24,6 +24,14 @@ pipeline {
 	          sh 'sudo docker images'
 	     }
 	 }
+
+	  stage('mysql-build') {
+             steps {
+                  sh 'cd Devops-Project/mysql && sudo docker build -t mysqldb .'
+                  sh 'sudo docker image ls'
+               }
+            }
+
         
          stage ('push-image-at-d-hub'){
              steps {
@@ -33,15 +41,6 @@ pipeline {
 		 
              }
         }
-
-
-	stage('mysql-build') {
-	     steps {
-	          sh 'ls -ltr Devops-Project/mysql'
-		  sh 'cd Devops-Project/mysql && sudo docker build -t mysqldb .'
-		  sh 'sudo docker image ls'
-	       }
-            }
 
     }
 }
