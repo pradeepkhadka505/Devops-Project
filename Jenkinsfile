@@ -27,9 +27,10 @@ pipeline {
         
          stage ('push-image-at-d-hub'){
              steps {
-                 sh 'sudo docker image tag phptest pradeepkhadka505/phptest:v1'
-                 sh 'sudo docker login -u="pradeepkhadka505@gmail.com" --p="Pradeep@Khadka@505" && sudo docker push pradeepkhadka505/phptest:v1'
-		 sh 'sudo image pushed to docker hub'
+                 sh 'sudo docker image tag phptest pradeepkhadka505/phptest:v1.1'
+                 sh 'sudo docker login -u="pradeepkhadka505@gmail.com" -p="Pradeep@Khadka@505"'
+		 sh 'sudo docker push pradeepkhadka505/phptest:v1.1'
+		 echo 'push succeded in to docker hub'
                  }
         }
 
