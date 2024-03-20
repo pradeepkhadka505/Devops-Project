@@ -25,13 +25,6 @@ pipeline {
 	     }
 	 }
 
-	 stage('mysql-build') {
-             steps {
-                  sh 'cd Devops-Project/mysql && sudo docker build -t mysqltest .'
-                  sh 'sudo docker images'
-               }
-            }
-
         
          stage ('push-image-at-d-hub'){
              steps {
@@ -39,17 +32,6 @@ pipeline {
                  sh 'sudo docker login -u="pradeepkhadka505@gmail.com" -p="Pradeep@505"'
 		 sh 'sudo docker push pradeepkhadka505/phptest:v1.1'
 		 
-             }
-        }
-
-
-
-        stage ('push-mysql-img'){
-             steps {
-                 sh 'sudo docker image tag mysqltest pradeepkhadka505/mysqltest:v1.1'
-                 sh 'sudo docker login -u="pradeepkhadka505@gmail.com" -p="Pradeep@505"'
-                 sh 'sudo docker push pradeepkhadka505/mysqltest:v1.1'
-
              }
         }
 
