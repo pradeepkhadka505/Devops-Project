@@ -30,20 +30,18 @@ pipeline {
                  sh 'sudo docker image tag phptest pradeepkhadka505/phptest:v1.1'
                  sh 'sudo docker login -u="pradeepkhadka505@gmail.com" -p="Pradeep@505"'
 		 sh 'sudo docker push pradeepkhadka505/phptest:v1.1'
-		 echo 'push succeded in to docker hub'
-                 }
+		 
+             }
         }
 
 
 	stage('mysql-build') {
 	     steps {
+	          sh 'ls -ltr Devops-Project/mysql'
 		  sh 'cd Devops-Project/mysql && sudo docker build -t mysqldb .'
 		  sh 'sudo docker image ls'
-
-            
-	    }
-
-        }
+	       }
+            }
 
     }
 }
