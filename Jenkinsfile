@@ -28,7 +28,7 @@ pipeline {
 	 stage('mysql-build') {
              steps {
                   sh 'cd Devops-Project/mysql && sudo docker build -t mysqltest .'
-                  sh 'sudo docker image ls'
+                  sh 'sudo docker images'
                }
             }
 
