@@ -2,5 +2,5 @@
 
 
 FROM mysql:8.1-oracle
-MAINTAINER susigugh@gmail.com
+MAINTAINER pradeepkhadka505@gmail.com
 ENV MYSQL_ROOT_PASSWORD mysql100
